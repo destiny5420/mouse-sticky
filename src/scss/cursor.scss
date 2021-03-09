@@ -1,0 +1,34 @@
+.course-container {
+  @include size(100%, 100%);
+
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.cursor {
+  display: block;
+
+  .inner {
+    z-index: 9999;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+  }
+
+  .dot {
+    @include size(4px);
+
+    background-color: #fff;
+  }
+
+  .circle {
+    @include size(25px);
+
+    border: 1px solid #fff;
+  }
+}
