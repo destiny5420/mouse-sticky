@@ -126,16 +126,37 @@ h6 {
 
 .text-container {
   @include size(100%, 100vh);
+  @include flex-center();
 
   z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
-  font-size: 100px;
+  justify-content: space-around;
+  font-size: 50px;
   text-align: center;
-  line-height: 100vh;
+}
+
+.text-block {
+  $wh: 150px;
+
+  @include size($wh);
+
+  display: inline-block;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  line-height: $wh;
 }
 
 .interactive-obj {
+  position: relative;
+  transition-property: transform, border-width;
+  transition-duration: 0.5s, 0.05s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition-property: transform, border-width;
+  -webkit-transition-duration: 0.5s, 0.05s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1),
+    cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform-origin: center;
   cursor: pointer;
 }

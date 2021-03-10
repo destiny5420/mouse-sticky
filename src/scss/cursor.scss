@@ -72,5 +72,8 @@
     @include size(40px);
 
     border: 2px solid #fecb00;
+    transition-property: width, height, background-color, border-width;
+    transition-delay: 0s, 0s, 0s, 0s;
+    transition-duration: 0.15s, 0.15s, 0.15s, 0.1s;
   }
 }

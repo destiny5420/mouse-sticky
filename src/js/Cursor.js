@@ -61,13 +61,14 @@ function render() {
   requestAnimationFrame(() => render.call(self))
 }
 
-function Cursor(element, dot, circle) {
+function Cursor(element, dot, circle, circleChild) {
   const self = this
 
   self.DOM = {
     element,
     dot,
     circle,
+    circleChild,
   }
 
   self.originData = {
@@ -79,7 +80,7 @@ function Cursor(element, dot, circle) {
     },
     circle: {
       backgroundColor: 'transparent',
-      size: 20,
+      size: 40,
       opacity: 1,
       borderWidth: 1,
     },
@@ -107,19 +108,19 @@ function Cursor(element, dot, circle) {
 Cursor.prototype.onEnter = function (backgroundColor, size) {
   $(this.DOM.dot).css('opacity', 0)
 
-  $(this.DOM.circle).css('background', backgroundColor)
-  $(this.DOM.circle).css('border-width', `0px`)
-  $(this.DOM.circle).css('width', `${size}px`)
-  $(this.DOM.circle).css('height', `${size}px`)
+  $(this.DOM.circleChild).css('background-color', backgroundColor)
+  $(this.DOM.circleChild).css('border-width', `0px`)
+  $(this.DOM.circleChild).css('width', `${size}px`)
+  $(this.DOM.circleChild).css('height', `${size}px`)
 }
 
 Cursor.prototype.onLeave = function () {
   $(this.DOM.dot).css('opacity', 1)
 
-  $(this.DOM.circle).css('background', this.originData.circle.backgroundColor)
-  $(this.DOM.circle).css('border-width', `${this.originData.circle.borderWidth}px`)
-  $(this.DOM.circle).css('width', `${this.originData.circle.size}px`)
-  $(this.DOM.circle).css('height', `${this.originData.circle.size}px`)
+  $(this.DOM.circleChild).css('background-color', this.originData.circle.backgroundColor)
+  $(this.DOM.circleChild).css('border-width', `${this.originData.circle.borderWidth}px`)
+  $(this.DOM.circleChild).css('width', `${this.originData.circle.size}px`)
+  $(this.DOM.circleChild).css('height', `${this.originData.circle.size}px`)
 }
 
 export default Cursor
