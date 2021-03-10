@@ -12,17 +12,9 @@ function getMousePos(e) {
   }
 
   if (event.pageX || event.pageY) {
-    console.log('event: ', event)
-    console.log('page / X: ', event.pageX, ' / Y: ', event.pageY)
-    console.log('-------------------------')
     posX = event.clientX
     posY = event.clientY
-    // posX = event.clientX + documentElement.scrollLeft
-    // posY = event.clientY + documentElement.scrollTop
   } else if (event.clientX || event.clientY) {
-    console.log(2)
-    // posX = event.clientX + body.scrollLeft + documentElement.scrollLeft
-    // posY = event.clientY + body.scrollTop + documentElement.scrollTop
     posX = event.clientX + documentElement.scrollLeft
     posY = event.clientY + documentElement.scrollTop
   }
@@ -78,6 +70,21 @@ function Cursor(element, dot, circle) {
     circle,
   }
 
+  self.originData = {
+    dot: {
+      backgroundColor: '',
+      size: 4,
+      opacity: 1,
+      borderWidth: '',
+    },
+    circle: {
+      backgroundColor: 'transparent',
+      size: 20,
+      opacity: 1,
+      borderWidth: 1,
+    },
+  }
+
   self.bounds = {
     dot: self.DOM.dot.getBoundingClientRect(),
     circle: self.DOM.circle.getBoundingClientRect(),
@@ -95,6 +102,24 @@ function Cursor(element, dot, circle) {
 
   eventBinding.call(this)
   requestAnimationFrame(() => render.call(self))
+}
+
+Cursor.prototype.onEnter = function (backgroundColor, size) {
+  $(this.DOM.dot).css('opacity', 0)
+
+  $(this.DOM.circle).css('background', backgroundColor)
+  $(this.DOM.circle).css('border-width', `0px`)
+  $(this.DOM.circle).css('width', `${size}px`)
+  $(this.DOM.circle).css('height', `${size}px`)
+}
+
+Cursor.prototype.onLeave = function () {
+  $(this.DOM.dot).css('opacity', 1)
+
+  $(this.DOM.circle).css('background', this.originData.circle.backgroundColor)
+  $(this.DOM.circle).css('border-width', `${this.originData.circle.borderWidth}px`)
+  $(this.DOM.circle).css('width', `${this.originData.circle.size}px`)
+  $(this.DOM.circle).css('height', `${this.originData.circle.size}px`)
 }
 
 export default Cursor

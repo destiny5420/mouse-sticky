@@ -42,7 +42,7 @@ footer {
 
 // ===== Container =====
 .container {
-  @include size(100%, 100vh);
+  @include size(100%, auto);
 
   background-color: rgb(44, 44, 44);
 }
@@ -122,4 +122,20 @@ h6 {
   left: 0;
   transform: translateY(20px);
   background-color: red;
+}
+
+.text-container {
+  @include size(100%, 100vh);
+
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 100px;
+  text-align: center;
+  line-height: 100vh;
+}
+
+.interactive-obj {
+  cursor: pointer;
 }
