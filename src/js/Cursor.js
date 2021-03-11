@@ -51,7 +51,7 @@ function render() {
   self.lastMousePos.circle.y = lerp(
     self.lastMousePos.circle.y,
     self.mousePos.y - self.bounds.circle.height / 2,
-    0.15,
+    self.data.circle.moveFactor,
   )
   self.lastScale = lerp(self.lastScale, self.scale, 0.15)
 

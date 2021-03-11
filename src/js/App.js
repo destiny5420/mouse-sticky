@@ -1,4 +1,5 @@
 import Cursor from './Cursor'
+import TouchObj from './TouchObj'
 import Sticky from './Sticky'
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
   }
 
   this.cursor = new Cursor(cursorConfigure)
-  this.sticky = new Sticky(this.cursor)
+
+  this.touchObj = new TouchObj(document.querySelectorAll('.touch-obj'), this.cursor)
+  this.sticky = new Sticky(document.querySelectorAll('.sticky-obj'))
 }
 
 export default App
