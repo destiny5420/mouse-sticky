@@ -114,16 +114,6 @@ h6 {
   font-weight: 300;
 }
 
-.test-block {
-  @include independent(1);
-  @include size(50px, 50px);
-
-  bottom: 0;
-  left: 0;
-  transform: translateY(20px);
-  background-color: red;
-}
-
 .text-container {
   @include size(100%, 100vh);
   @include flex-center();
@@ -138,7 +128,7 @@ h6 {
 }
 
 .text-block {
-  $wh: 150px;
+  $wh: 250px;
 
   @include size($wh);
 
@@ -146,17 +136,4 @@ h6 {
   border: 3px solid #fff;
   border-radius: 50%;
   line-height: $wh;
-}
-
-.interactive-obj {
-  position: relative;
-  transition-property: transform, border-width;
-  transition-duration: 0.5s, 0.05s;
-  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1);
-  -webkit-transition-property: transform, border-width;
-  -webkit-transition-duration: 0.5s, 0.05s;
-  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1),
-    cubic-bezier(0.165, 0.84, 0.44, 1);
-  transform-origin: center;
-  cursor: pointer;
 }

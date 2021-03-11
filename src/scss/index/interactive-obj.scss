@@ -1,0 +1,12 @@
+.interactive-obj {
+  position: relative;
+  transition-property: transform, border-width;
+  transition-duration: 0.5s, 0.05s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1), cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition-property: transform, border-width;
+  -webkit-transition-duration: 0.5s, 0.05s;
+  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1),
+    cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform-origin: center;
+  cursor: pointer;
+}

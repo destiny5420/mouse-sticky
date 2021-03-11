@@ -16,56 +16,62 @@
     <meta property="og:locale" content="<%= htmlWebpackPlugin.options.oglocale %>" />
     <link rel="stylesheet" href="./static/css/reset.min.css" />
     <link rel="icon" type="image/x-icon" href="<%= htmlWebpackPlugin.options.icon %>" title="" />
-    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.includeFont %>" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- <div class="course-container">
-      <div id="cursor" class="cursor">
-        <div id="cursor-circle" class="inner circle"></div>
-        <div id="cursor-dot" class="inner dot"></div>
-      </div>
-    </div> -->
     <div class="container">
       <div class="text-container">
-        <div class="text-block interactive-obj" data-color="#fff" data-size="80">TEXT</div>
-        <div class="text-block interactive-obj" data-color="#fff" data-size="150">TEXT</div>
+        <div class="text-block interactive-obj" data-color="#fff" data-size="200">
+          <p>STICKY</p>
+        </div>
+
+        <div class="text-block" data-color="red" data-size="100">
+          <p>RED</p>
+        </div>
       </div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(40, 40, 40)"
-      ></div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(50, 50, 50)"
-      ></div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(60, 60, 60)"
-      ></div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(70, 70, 70)"
-      ></div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(80, 80, 80)"
-      ></div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(90, 90, 90)"
-      ></div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(100, 100, 100)"
-      ></div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(110, 110, 110)"
-      ></div>
-      <div
-        class="block"
-        style="width: 100%; height: 150px; background-color: rgb(120, 120, 120)"
-      ></div>
+      <div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(40, 40, 40)"
+        ></div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(50, 50, 50)"
+        ></div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(60, 60, 60)"
+        ></div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(70, 70, 70)"
+        ></div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(80, 80, 80)"
+        ></div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(90, 90, 90)"
+        ></div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(100, 100, 100)"
+        ></div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(110, 110, 110)"
+        ></div>
+        <div
+          class="block"
+          style="width: 100%; height: 150px; background-color: rgb(120, 120, 120)"
+        ></div>
+      </div>
     </div>
     <div id="cursor-circle" class="inner circle">
       <div id="cursor-circle-child" class="circle__deco"></div>

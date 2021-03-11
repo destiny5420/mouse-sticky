@@ -55,40 +55,20 @@ function render() {
   )
   self.lastScale = lerp(self.lastScale, self.scale, 0.15)
 
-  self.DOM.dot.style.transform = `translateX(${self.lastMousePos.dot.x}px) translateY(${self.lastMousePos.dot.y}px)`
-  self.DOM.circle.style.transform = `translateX(${self.lastMousePos.circle.x}px) translateY(${self.lastMousePos.circle.y}px) scale(${self.lastScale})`
+  self.data.dot.element.style.transform = `translateX(${self.lastMousePos.dot.x}px) translateY(${self.lastMousePos.dot.y}px)`
+  self.data.circle.element.style.transform = `translateX(${self.lastMousePos.circle.x}px) translateY(${self.lastMousePos.circle.y}px) scale(${self.lastScale})`
 
   requestAnimationFrame(() => render.call(self))
 }
 
-function Cursor(element, dot, circle, circleChild) {
+function Cursor(datas) {
   const self = this
 
-  self.DOM = {
-    element,
-    dot,
-    circle,
-    circleChild,
-  }
-
-  self.originData = {
-    dot: {
-      backgroundColor: '',
-      size: 4,
-      opacity: 1,
-      borderWidth: '',
-    },
-    circle: {
-      backgroundColor: 'transparent',
-      size: 40,
-      opacity: 1,
-      borderWidth: 1,
-    },
-  }
+  self.data = datas
 
   self.bounds = {
-    dot: self.DOM.dot.getBoundingClientRect(),
-    circle: self.DOM.circle.getBoundingClientRect(),
+    dot: self.data.dot.element.getBoundingClientRect(),
+    circle: self.data.circle.element.getBoundingClientRect(),
   }
 
   self.scale = 1
@@ -106,21 +86,21 @@ function Cursor(element, dot, circle, circleChild) {
 }
 
 Cursor.prototype.onEnter = function (backgroundColor, size) {
-  $(this.DOM.dot).css('opacity', 0)
+  $(this.data.dot.element).css('opacity', 0)
 
-  $(this.DOM.circleChild).css('background-color', backgroundColor)
-  $(this.DOM.circleChild).css('border-width', `0px`)
-  $(this.DOM.circleChild).css('width', `${size}px`)
-  $(this.DOM.circleChild).css('height', `${size}px`)
+  $(this.data.circleChild.element).css('background-color', backgroundColor)
+  $(this.data.circleChild.element).css('border-width', `0px`)
+  $(this.data.circleChild.element).css('width', `${size}px`)
+  $(this.data.circleChild.element).css('height', `${size}px`)
 }
 
 Cursor.prototype.onLeave = function () {
-  $(this.DOM.dot).css('opacity', 1)
+  $(this.data.dot.element).css('opacity', 1)
 
-  $(this.DOM.circleChild).css('background-color', this.originData.circle.backgroundColor)
-  $(this.DOM.circleChild).css('border-width', `${this.originData.circle.borderWidth}px`)
-  $(this.DOM.circleChild).css('width', `${this.originData.circle.size}px`)
-  $(this.DOM.circleChild).css('height', `${this.originData.circle.size}px`)
+  $(this.data.circleChild.element).css('background-color', this.data.circle.originBackgroundColor)
+  $(this.data.circleChild.element).css('border-width', `${this.data.circle.originBorderWidth}px`)
+  $(this.data.circleChild.element).css('width', `${this.data.circle.originSize}px`)
+  $(this.data.circleChild.element).css('height', `${this.data.circle.originSize}px`)
 }
 
 export default Cursor
