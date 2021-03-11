@@ -92,7 +92,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      title: 'Title｜Slogan',
+      title: 'Mouse Sticky',
       sitename: 'template',
       viewport: 'width=device-width, initial-scale=1, user-scalable=yes',
       description: 'description',
@@ -103,7 +103,7 @@ module.exports = {
       ogurl: '{host}',
       oglocale: 'zh_tw',
       twurl: '{host}',
-      twtitle: 'Title｜Slogan',
+      twtitle: 'Mouse Sticky',
       twdescription: 'description',
       twimage: '{host}/static/ogshare/ogshare.jpg',
       twimagealt: 'description',
@@ -122,53 +122,6 @@ module.exports = {
           },
           global: '$',
         },
-        // {
-        //   module: '',
-        //   entry: {
-        //     path: 'https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js',
-        //   },
-        // },
-        // {
-        //   module: 'gsap',
-        //   entry: {
-        //     path: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js',
-        //   },
-        //   global: 'gsap',
-        // },
-        // {
-        //   module: 'ScrollToPlugin',
-        //   entry: {
-        //     path: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollToPlugin.min.js',
-        //   },
-        //   global: 'ScrollToPlugin',
-        // },
-        // {
-        //   module: 'ScrollTrigger',
-        //   entry: {
-        //     path: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js',
-        //   },
-        //   global: 'ScrollTrigger',
-        // },
-        // {
-        //   module: 'Swiper',
-        //   entry: {
-        //     path: 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.14/swiper-bundle.min.js',
-        //   },
-        //   global: 'Swiper',
-        // },
-        // {
-        //   module: '',
-        //   entry: {
-        //     path: 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.14/swiper-bundle.min.css',
-        //   },
-        // },
-        // {
-        //   module: 'anime',
-        //   entry: {
-        //     path: 'https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js',
-        //   },
-        //   global: 'anime',
-        // },
       ],
     }),
     new CopyPlugin({
